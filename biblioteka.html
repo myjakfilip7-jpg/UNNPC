@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moje produkty · UNNPC</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0e0f0c">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/account.css">
+</head>
+<body>
+<header class="nav is-scrolled" id="nav">
+  <a class="nav__logo mono" href="/">&gt;_ UNNPC</a>
+  <nav class="nav__links"><a href="/#moduly">Moduły</a><a href="/#cennik">Cennik</a><span id="navAccount"></span></nav>
+  <button class="btn btn--line btn--sm" id="logoutBtn" type="button">Wyloguj</button>
+</header>
+
+<main class="acct acct--wide">
+  <div class="acct__head">
+    <span class="label">Biblioteka</span>
+    <h1>Moje <span class="acc">produkty</span></h1>
+    <p class="mono acct__who" id="who"></p>
+  </div>
+
+  <div class="lib" id="lib">
+    <div class="lib__empty ph" id="loading">Ładuję…</div>
+  </div>
+
+  <section class="lib__upsell" id="upsell" hidden>
+    <div>
+      <h2>Brakuje Ci Life RPG?</h2>
+      <p>Pełny system: 6 modułów, 4 motywy, dożywotnie aktualizacje.</p>
+    </div>
+    <a class="btn btn--acc" href="#" data-checkout="life-rpg">Kup Life RPG — 199 zł</a>
+  </section>
+</main>
+
+<footer class="footer label">
+  <span>© 2026 UNNPC · unnpc.com</span>
+  <nav><a href="#">Regulamin</a><a href="#">Prywatność</a><a href="mailto:[EMAIL_WSPARCIA]">Pomoc</a></nav>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
+<script src="js/config.js"></script>
+<script src="js/account.js"></script>
+<script>
+(async function () {
+  const sb = window.UNNPC.sb;
+  const lib = document.getElementById('lib');
+  if (!sb) { lib.innerHTML = '<div class="lib__empty ph">Biblioteka jeszcze nie jest podłączona (brak konfiguracji Supabase).</div>'; return; }
+
+  const { data } = await sb.auth.getSession();
+  if (!data.session) { location.replace('konto.html'); return; }
+  const email = data.session.user.email;
+  document.getElementById('who').textContent = email;
+  document.getElementById('logoutBtn').addEventListener('click', async () => { await sb.auth.signOut(); location.href = '/'; });
+
+  const { data: items, error } = await sb.rpc('my_library');
+  if (error) { lib.innerHTML = `<div class="lib__empty ph">Błąd: ${error.message}</div>`; return; }
+
+  if (!items || !items.length) {
+    lib.innerHTML = `<div class="lib__empty">
+      <h3>Jeszcze pusto.</h3>
+      <p>Nie widzimy zakupów na <b>${email}</b>. Jeśli płaciłeś innym e-mailem, zaloguj się nim albo napisz do nas.</p>
+      <a class="btn btn--line" href="/#tracker">Odbierz darmowy Investor Tracker</a></div>`;
+    document.getElementById('upsell').hidden = false;
+    return;
+  }
+
+  lib.innerHTML = items.map((p) => `
+    <article class="lib__card">
+      <div class="lib__cover" style="${p.cover_url ? `background-image:url(${p.cover_url})` : ''}"><span class="mono">${p.name}</span></div>
+      <div class="lib__body">
+        <span class="label">Kupiono ${new Date(p.purchased_at).toLocaleDateString('pl-PL')}</span>
+        <h3>${p.name}</h3>
+        <p>${p.description || ''}</p>
+        <a class="btn btn--acc" href="${p.notion_url}" target="_blank" rel="noopener">Otwórz w Notion → Duplikuj</a>
+        <span class="label">W Notion kliknij „Duplicate” w prawym górnym rogu. Link działa zawsze — aktualizacje pojawiają się tutaj.</span>
+      </div>
+    </article>`).join('');
+
+  if (!items.some((p) => p.product_id === 'life-rpg')) document.getElementById('upsell').hidden = false;
+})();
+</script>
+</body>
+</html>
