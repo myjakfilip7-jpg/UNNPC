@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UNNPC — Life RPG w Notion. Życie to gra, przestań grać NPC-a.</title>
+  <meta name="description" content="Life RPG to system w Notion: karta postaci, questy dnia, 90-dniowe sezony i skarbiec. Jednorazowa płatność 199 zł, dożywotnie aktualizacje. Investor Tracker za darmo.">
+  <meta property="og:title" content="UNNPC — Life RPG w Notion">
+  <meta property="og:description" content="Życie to gra. Przestań grać NPC-a. System Notion z XP, questami i sezonami.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://unnpc.com/img/og.jpg">
+  <meta property="og:url" content="https://unnpc.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0e0f0c">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://unnpc.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><div class="progress__bar" id="progressBar"></div></div>
+
+<header class="nav" id="nav">
+  <a class="nav__logo mono" href="#top">&gt;_ UNNPC</a>
+  <span class="nav__status label"><span class="dot"></span>NPC MODE: OFF</span>
+  <nav class="nav__links">
+    <a href="#system">System</a>
+    <a href="#moduly">Moduły</a>
+    <a href="#motywy">Motywy</a>
+    <a href="#cennik">Cennik</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <a class="btn btn--acc btn--sm" href="#cennik">Kup — 199 zł</a>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__grid" aria-hidden="true"></div>
+
+    <div class="hero__copy">
+      <div class="chips" aria-hidden="true">
+        <span class="chip" data-float>+50 XP</span>
+        <span class="chip" data-float>LEVEL UP</span>
+        <span class="chip" data-float>SERIA 17</span>
+      </div>
+      <h1 class="hero__title" data-split>Życie to gra.<br>Przestań grać <span class="acc">NPC-a.</span></h1>
+      <p class="hero__lead" data-reveal>Life RPG to system w Notion, który daje Ci kartę postaci, questy dnia i 90-dniowe sezony. Zdobywasz XP za rzeczy, które i tak powinieneś robić. Różnica: teraz to widać.</p>
+      <div class="hero__cta" data-reveal>
+        <a class="btn btn--acc" href="#cennik">Kup Life RPG — 199 zł</a>
+        <a class="btn btn--line" href="#tracker">Darmowy Investor Tracker</a>
+      </div>
+      <p class="label hero__meta" data-reveal>[LICZBA] graczy · darmowy plan Notion · setup 5 min · 14 dni na zwrot</p>
+    </div>
+
+    <div class="stage" id="heroStage">
+      <div class="stage__tilt" id="heroTilt">
+        <figure class="shot shot--hero" data-shot="dashboard" id="heroShot"></figure>
+        <div class="stage__float stage__float--a" data-float>
+          <span class="mono">+40 XP</span><small>Trening 45 min</small>
+        </div>
+        <div class="stage__float stage__float--b" data-float>
+          <span class="mono">LVL 12 → 13</span><small>2 340 / 3 000 XP</small>
+        </div>
+        <div class="stage__float stage__float--c" data-float>
+          <span class="mono">BOSS</span><small>Scroll po 22:00 · 5/7</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TICKER ============ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track" id="ticker">
+      <span>Karta postaci</span><span>Daily Loop</span><span>Sezony</span><span>Skarbiec</span><span>Skill Tree</span><span>Boss Log</span><span>NPC Meter</span><span>XP</span>
+      <span>Karta postaci</span><span>Daily Loop</span><span>Sezony</span><span>Skarbiec</span><span>Skill Tree</span><span>Boss Log</span><span>NPC Meter</span><span>XP</span>
+    </div>
+  </div>
+
+  <!-- ============ PROBLEM ============ -->
+  <section class="problem" id="system">
+    <div class="problem__item" data-reveal>
+      <span class="mono problem__num" data-count="4">0</span>
+      <p>porzucone appki do nawyków w Twoim telefonie. Średnio.</p>
+    </div>
+    <div class="problem__item" data-reveal>
+      <span class="mono problem__num" data-count="0">0</span>
+      <p>z nich pokazuje, w której dziedzinie życia stoisz w miejscu.</p>
+    </div>
+    <div class="problem__item" data-reveal>
+      <span class="mono problem__num" data-count="1">0</span>
+      <p>ekran w Notion, na którym widzisz wszystko. To jest Life RPG.</p>
+    </div>
+  </section>
+
+  <!-- ============ MODULES (pinned scrollytelling) ============ -->
+  <section class="modules" id="moduly">
+    <div class="modules__pin" id="modulesPin">
+      <div class="modules__text">
+        <span class="label">Sześć modułów · jeden ekran</span>
+        <ol class="steps" id="steps">
+          <li class="step is-active" data-step="0">
+            <span class="step__idx mono">01</span>
+            <h3>Karta postaci</h3>
+            <p>Poziom, XP i sześć statystyk: Ciało, Umysł, Finanse, Relacje, Rzemiosło, Spokój. Każdy quest podbija konkretną.</p>
+          </li>
+          <li class="step" data-step="1">
+            <span class="step__idx mono">02</span>
+            <h3>Daily Loop</h3>
+            <p>Trzy questy dziennie, nawyki, seria. XP liczą formuły Notion, Ty tylko odhaczasz.</p>
+          </li>
+          <li class="step" data-step="2">
+            <span class="step__idx mono">03</span>
+            <h3>Sezony</h3>
+            <p>Życie w 90-dniowych sezonach. Jeden Main Quest, trzy Side Questy, boss fight na końcu.</p>
+          </li>
+          <li class="step" data-step="3">
+            <span class="step__idx mono">04</span>
+            <h3>Skarbiec</h3>
+            <p>Budżet, oszczędności i portfel inwestycyjny jako statystyka Finanse.</p>
+          </li>
+          <li class="step" data-step="4">
+            <span class="step__idx mono">05</span>
+            <h3>Skill Tree</h3>
+            <p>Drzewko umiejętności z wymaganiami wstępnymi. Odblokowujesz gałęzie za XP.</p>
+          </li>
+          <li class="step" data-step="5">
+            <span class="step__idx mono">06</span>
+            <h3>Boss Log</h3>
+            <p>Prokrastynacja, scroll, sen. Dziennik przeciwników i wygranych dni.</p>
+          </li>
+        </ol>
+      </div>
+      <div class="modules__stage">
+        <div class="deck" id="deck">
+          <figure class="shot deck__card" data-shot="character"></figure>
+          <figure class="shot deck__card" data-shot="daily"></figure>
+          <figure class="shot deck__card" data-shot="season"></figure>
+          <figure class="shot deck__card" data-shot="vault"></figure>
+          <figure class="shot deck__card" data-shot="skills"></figure>
+          <figure class="shot deck__card" data-shot="boss"></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LEVEL UP ============ -->
+  <section class="levelup" id="levelup">
+    <div class="levelup__inner">
+      <span class="label">Widoczny postęp</span>
+      <h2 class="levelup__title">Nie wygrywa ten, kto ma plan.<br>Wygrywa ten, kto <span class="acc">widzi wynik.</span></h2>
+      <div class="xp">
+        <div class="xp__head mono">
+          <span>LVL <b id="xpLevel">12</b></span>
+          <span><b id="xpNow">0</b> / 3 000 XP</span>
+        </div>
+        <div class="xp__bar"><div class="xp__fill" id="xpFill"></div></div>
+        <div class="xp__burst mono" id="xpBurst">LEVEL UP → 13</div>
+      </div>
+      <div class="meter" data-reveal>
+        <span class="label">NPC Meter · wrzesień</span>
+        <div class="meter__days" id="meterDays"></div>
+        <span class="mono meter__sum">11 / 13 dni jako main character</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THEMES (horizontal pinned) ============ -->
+  <section class="themes" id="motywy">
+    <div class="themes__pin" id="themesPin">
+      <div class="themes__head">
+        <span class="label">Wybierz świat · 4 motywy w cenie</span>
+        <h2>Ten sam system.<br>Cztery skóry.</h2>
+      </div>
+      <div class="themes__track" id="themesTrack">
+        <figure class="theme theme--terminal"><div class="shot shot--theme" data-shot="theme-terminal"></div><figcaption class="mono">01 · Terminal</figcaption></figure>
+        <figure class="theme theme--cyber"><div class="shot shot--theme" data-shot="theme-cyber"></div><figcaption class="mono">02 · Cyber</figcaption></figure>
+        <figure class="theme theme--pixel"><div class="shot shot--theme" data-shot="theme-pixel"></div><figcaption class="mono">03 · Pixel</figcaption></figure>
+        <figure class="theme theme--clean"><div class="shot shot--theme" data-shot="theme-clean"></div><figcaption class="mono">04 · Clean</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FREE TRACKER ============ -->
+  <section class="tracker" id="tracker">
+    <div class="tracker__copy" data-reveal>
+      <span class="label">Za darmo · wejście do gry</span>
+      <h2>Investor Tracker.<br>Portfel w Notion, 0 zł.</h2>
+      <p>Akcje, ETF-y, obligacje i krypto z podziałem na konta. Ten sam moduł „Skarbiec”, który w Life RPG zasila statystykę Finanse. Podaj maila, link do duplikacji przyjdzie od razu.</p>
+      <form class="lead" action="#" method="post" onsubmit="return false;">
+        <label class="sr-only" for="leadEmail">E-mail</label>
+        <input id="leadEmail" type="email" name="email" placeholder="twoj@email.pl" required>
+        <button class="btn btn--acc" type="submit">Wyślij tracker</button>
+      </form>
+      <p class="label">Zero spamu. Jeden mail z linkiem, potem 30-dniowy „Pierwszy sezon”, jeśli chcesz.</p>
+    </div>
+    <div class="tracker__stage" data-reveal>
+      <figure class="shot shot--tracker" data-shot="tracker"></figure>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="pricing" id="cennik">
+    <div class="pricing__head" data-reveal>
+      <span class="label">Cennik</span>
+      <h2>Jedna płatność. Lifetime.</h2>
+    </div>
+    <div class="plans">
+      <article class="plan" data-reveal data-tilt>
+        <span class="label">Start</span>
+        <h3>Investor Tracker</h3>
+        <div class="plan__price mono">0 zł</div>
+        <ul>
+          <li>Portfel inwestycyjny w Notion</li>
+          <li>Akcje, ETF, obligacje, krypto</li>
+          <li>Za maila</li>
+        </ul>
+        <a class="btn btn--line" href="#tracker">Pobierz</a>
+      </article>
+      <article class="plan plan--main" data-reveal data-tilt>
+        <div class="plan__top"><span class="label acc">Pełny system</span><span class="chip">-20% NA START</span></div>
+        <h3>Life RPG</h3>
+        <div class="plan__price mono">199 zł <s>249 zł</s></div>
+        <ul>
+          <li>6 modułów + Investor Tracker</li>
+          <li>4 motywy: Terminal, Cyber, Pixel, Clean</li>
+          <li>Dożywotnie aktualizacje</li>
+          <li>30-dniowy „Pierwszy sezon” mailem</li>
+          <li>Wersja mobilna pulpitu</li>
+          <li>Discord graczy</li>
+        </ul>
+        <a class="btn btn--acc" href="[LINK_CHECKOUT]" data-checkout>Kup Life RPG</a>
+        <span class="label plan__note">14 dni na zwrot · BLIK / karta / PayPal</span>
+      </article>
+      <article class="plan plan--soon" data-reveal data-tilt>
+        <span class="label">Wkrótce</span>
+        <h3>Dodatki</h3>
+        <div class="plan__price mono muted">—</div>
+        <ul>
+          <li>Pakiety motywów</li>
+          <li>Moduły: student, freelancer</li>
+          <li>Dla posiadaczy Life RPG</li>
+        </ul>
+        <a class="btn btn--line" href="#tracker">Powiadom mnie</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ PROOF ============ -->
+  <section class="proof">
+    <span class="label" data-reveal>Opinie graczy</span>
+    <div class="proof__grid">
+      <blockquote class="ph" data-reveal>[OPINIA — do uzupełnienia po becie]</blockquote>
+      <blockquote class="ph" data-reveal>[OPINIA — do uzupełnienia po becie]</blockquote>
+      <blockquote class="ph" data-reveal>[OPINIA — do uzupełnienia po becie]</blockquote>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq" id="faq">
+    <div class="faq__head" data-reveal>
+      <span class="label">FAQ</span>
+      <h2>Pytania przed zakupem</h2>
+    </div>
+    <div class="faq__list">
+      <details data-reveal><summary>Czy potrzebuję płatnego Notion?<span class="mono">+</span></summary><p>Nie. Life RPG działa na darmowym planie Notion. Wszystkie XP i statystyki liczą formuły, nie automatyzacje.</p></details>
+      <details data-reveal><summary>Ile zajmuje konfiguracja?<span class="mono">+</span></summary><p>Około pięciu minut: duplikujesz szablon, przechodzisz kreator „Nowa gra” w pięciu krokach i dodajesz pierwsze trzy questy.</p></details>
+      <details data-reveal><summary>Czym to się różni od LiFE RPG (HeyAlbert)?<span class="mono">+</span></summary><p>Sześć modułów zamiast piętnastu, wszystko na jednym ekranie, bez sklepów i walut. Life RPG jest o statystykach życia, nie o fantasy.</p></details>
+      <details data-reveal><summary>Czy działa na telefonie?<span class="mono">+</span></summary><p>Tak, w aplikacji Notion. Pulpit ma osobny widok mobilny z questami dnia i paskiem XP.</p></details>
+      <details data-reveal><summary>Jak wygląda zwrot?<span class="mono">+</span></summary><p>14 dni, bez pytań. Piszesz maila, oddajemy pieniądze.</p></details>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final" data-reveal>
+    <div class="final__inner">
+      <div>
+        <h2>Nowa gra. Ta sama postać.</h2>
+        <p>Setup w 5 minut. Pierwszy quest dziś wieczorem.</p>
+      </div>
+      <a class="btn btn--ink" href="[LINK_CHECKOUT]" data-checkout>Kup Life RPG — 199 zł</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer label">
+  <span>© 2026 UNNPC · unnpc.com</span>
+  <nav><a href="#">Regulamin</a><a href="#">Prywatność</a><a href="#">Kontakt</a><a href="#">TikTok</a></nav>
+</footer>
+
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/shots.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
