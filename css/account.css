@@ -1,0 +1,39 @@
+/* ---------- konto / biblioteka ---------- */
+.acct { min-height: 100vh; padding: 140px var(--pad) 96px; display: flex; flex-direction: column; align-items: center; gap: 40px; }
+.acct--wide { align-items: stretch; max-width: 1100px; margin: 0 auto; width: 100%; }
+.acct__card { width: 100%; max-width: 480px; display: flex; flex-direction: column; gap: 18px; padding: 40px; border-radius: 12px; background: var(--bg-2); border: 1px solid var(--line); }
+.acct__card h1 { font-size: 34px; }
+.acct__card p { color: var(--text-2); line-height: 1.5; font-size: 15px; }
+.acct__google { gap: 10px; width: 100%; }
+.acct__or { text-align: center; }
+.acct__form { display: flex; flex-direction: column; gap: 10px; }
+.acct__form input { height: 50px; padding: 0 16px; border-radius: 6px; border: 1px solid #3a3e35; background: var(--bg); color: var(--text); font: inherit; font-size: 15px; }
+.acct__form input:focus { outline: none; border-color: var(--acc); }
+.acct__msg { font-size: 13px; }
+.acct__head { display: flex; flex-direction: column; gap: 10px; }
+.acct__who { font-size: 12px; color: var(--text-3); }
+.nav .btn { margin-left: auto; }
+.nav__links a, #navAccount a { color: var(--text-2); }
+
+.lib { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.lib__card { display: grid; grid-template-columns: 200px 1fr; border-radius: 12px; overflow: hidden; background: var(--bg-2); border: 1px solid var(--line); }
+.lib__cover { background: var(--bg-3) center/cover; display: flex; align-items: flex-end; padding: 16px; color: var(--acc); font-size: 13px; min-height: 180px; }
+.lib__body { display: flex; flex-direction: column; gap: 10px; padding: 24px; }
+.lib__body h3 { font-size: 22px; }
+.lib__body p { color: var(--text-2); font-size: 14px; line-height: 1.5; }
+.lib__body .btn { align-self: flex-start; margin-top: 6px; }
+.lib__empty { grid-column: 1 / -1; padding: 40px; border-radius: 12px; background: var(--bg-2); border: 1px dashed #33372d; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.lib__empty p { color: var(--text-2); line-height: 1.5; }
+.lib__upsell { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 32px; border-radius: 12px; border: 1px solid var(--line-2); background: var(--bg-3); }
+.lib__upsell h2 { font-size: 24px; }
+.lib__upsell p { color: var(--text-2); margin-top: 6px; }
+
+@media (max-width: 900px) {
+  .lib { grid-template-columns: 1fr; }
+  .lib__card { grid-template-columns: 1fr; }
+  .lib__upsell { flex-direction: column; align-items: flex-start; }
+  .acct__card { padding: 28px; }
+}
+
+button.btn { background: transparent; font-family: inherit; cursor: pointer; }
+button.btn--acc { background: var(--acc); }
