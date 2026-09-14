@@ -133,10 +133,38 @@
     'theme-clean': themeShot('', 'Filip · Poziom 12'),
   };
 
+  /* ---------- EN strings (applied when <html lang="en">) ---------- */
+  const EN = [
+    ['Pulpit', 'Dashboard'], ['Karta postaci', 'Character sheet'], ['Sezony', 'Seasons'], ['Skarbiec', 'Vault'],
+    ['Filip · Poziom 12', 'Filip · Level 12'], ['2 340 / 3 000 XP do poziomu 13', '2,340 / 3,000 XP to level 13'],
+    ['Questy dnia', 'Today’s quests'], ['Trening 45 min', 'Workout 45 min'], ['Przelew 500 zł na inwestycje', 'Move $150 to investments'],
+    ['Przelew na inwestycje', 'Move money to investments'], ['30 stron „Atomowych nawyków”', '30 pages of “Atomic Habits”'], ['30 stron książki', '30 pages of a book'],
+    ['Main Quest · Sezon 3', 'Main Quest · Season 3'], ['Poduszka finansowa 20 000 zł', 'Emergency fund $5,000'], ['Poduszka 20 000 zł', 'Emergency fund $5,000'],
+    ['12 400 zł · 41 dni do bossa', '$3,100 · 41 days to the boss'],
+    ['Poziom 12 · Ranga: Adept · 2 340 / 3 000 XP', 'Level 12 · Rank: Adept · 2,340 / 3,000 XP'], ['Poziom 12 · 2 340 / 3 000 XP', 'Level 12 · 2,340 / 3,000 XP'],
+    ['Historia awansów: 11 → 12 (3 wrz), 10 → 11 (2 sie)', 'Level history: 11 → 12 (Sep 3), 10 → 11 (Aug 2)'],
+    ['Daily Loop · wtorek', 'Daily Loop · Tuesday'], ['Seria: 17 dni · dziś zdobyte: 40 / 125 XP', 'Streak: 17 days · earned today: 40 / 125 XP'], ['Nawyki', 'Habits'],
+    ['Sezon 3 · dzień 49 / 90', 'Season 3 · day 49 / 90'], ['Side Questy', 'Side Quests'], ['Przebiec 10 km bez przerwy', 'Run 10 km non-stop'],
+    ['Skończyć kurs Next.js', 'Finish the Next.js course'], ['12 wieczorów bez telefonu', '12 phone-free evenings'], ['Boss fight: 31 października · ocena sezonu', 'Boss fight: Oct 31 · season review'],
+    ['Portfel', 'Portfolio'], ['18 220 zł', '$4,560'], ['+4,2% w tym miesiącu', '+4.2% this month'], ['Statystyka Finanse', 'Money stat'],
+    ['Aktywo', 'Asset'], ['Udział', 'Share'], ['Wartość', 'Value'], ['ETF S&amp;P 500', 'S&amp;P 500 ETF'], ['ETF Świat', 'World ETF'], ['Obligacje EDO', 'Gov bonds'],
+    ['9 240 zł', '$2,310'], ['4 110 zł', '$1,030'], ['3 000 zł', '$750'], ['1 870 zł', '$470'],
+    ['Gałąź: Rzemiosło · 3 / 7 odblokowane', 'Branch: Craft · 3 / 7 unlocked'], ['Własny SaaS', 'Own SaaS'], ['Gałąź: Ciało · 2 / 5', 'Branch: Body · 2 / 5'],
+    ['Półmaraton', 'Half marathon'], ['Maraton', 'Marathon'], ['Następne odblokowanie: Next.js · wymaga 300 XP Rzemiosło', 'Next unlock: Next.js · needs 300 Craft XP'],
+    ['Boss tygodnia', 'Boss of the week'], ['Scrollowanie po 22:00', 'Scrolling after 10 pm'], ['Wygrane dni: 5 / 7', 'Days won: 5 / 7'], ['Inni bossowie', 'Other bosses'],
+    ['Prokrastynacja rano', 'Morning procrastination'], ['Sen &lt; 7h', 'Sleep &lt; 7h'], ['Sen < 7h', 'Sleep < 7h'], ['Jedzenie na mieście', 'Eating out'],
+    ['Razem', 'Total'], ['Wpłacone', 'Invested'], ['16 400 zł', '$4,100'], ['Konto / aktywo', 'Account / asset'], ['Ilość', 'Qty'],
+    ['IKE · ', 'IRA · '], ['Giełda · BTC', 'Exchange · BTC'], ['0,007', '0.007'],
+    // stat names last — they appear inside longer strings above
+    ['Ciało', 'Body'], ['Umysł', 'Mind'], ['Finanse', 'Money'], ['Relacje', 'People'], ['Rzemiosło', 'Craft'], ['Spokój', 'Calm'],
+  ];
+  const en = document.documentElement.lang === 'en';
+  const tr = (html) => en ? EN.reduce((h, [a, b]) => h.split(a).join(b), html) : html;
+
   document.querySelectorAll('[data-shot]').forEach((el) => {
     if (el.querySelector('img')) return;
     const key = el.dataset.shot;
-    if (themes[key]) el.innerHTML = themes[key];
-    else if (shots[key]) el.innerHTML = `<div class="nw">${shots[key]}</div>`;
+    if (themes[key]) el.innerHTML = tr(themes[key]);
+    else if (shots[key]) el.innerHTML = tr(`<div class="nw">${shots[key]}</div>`);
   });
 })();

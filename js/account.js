@@ -10,6 +10,11 @@
 
   const $ = (s, r = document) => r.querySelector(s);
   const base = location.pathname.includes('/en/') ? '/en/' : '/';
+  const en = base === '/en/';
+  const T = en
+    ? { account: 'account.html', library: 'library.html', login: 'Sign in', lib: 'Library', noShop: 'The store is not connected yet (missing Lemon Squeezy config).' }
+    : { account: 'konto.html', library: 'biblioteka.html', login: 'Zaloguj', lib: 'Biblioteka', noShop: 'Sklep jeszcze nie jest podłączony (brak konfiguracji Lemon Squeezy).' };
+  window.UNNPC.T = T;
 
   /* ---------- nav: Zaloguj / Biblioteka ---------- */
   async function paintNav() {
@@ -17,9 +22,9 @@
     if (!slot) return;
     const { data } = sb ? await sb.auth.getSession() : { data: { session: null } };
     if (data.session) {
-      slot.innerHTML = `<a href="${base}biblioteka.html">Biblioteka</a>`;
+      slot.innerHTML = `<a href="${base}${T.library}">${T.lib}</a>`;
     } else {
-      slot.innerHTML = `<a href="${base}konto.html">Zaloguj</a>`;
+      slot.innerHTML = `<a href="${base}${T.account}">${T.login}</a>`;
     }
   }
 
@@ -40,7 +45,7 @@
     let mail = email;
     if (!mail && sb) { const { data } = await sb.auth.getSession(); mail = data.session?.user?.email; }
     const url = checkoutUrl(productId, mail);
-    if (!url) { alert('Sklep jeszcze nie jest podłączony (brak konfiguracji Lemon Squeezy).'); return; }
+    if (!url) { alert(T.noShop); return; }
     if (window.LemonSqueezy) { window.LemonSqueezy.Url.Open(url); } else { location.href = url; }
   }
   window.UNNPC.openCheckout = openCheckout;
@@ -67,7 +72,7 @@
       eventHandler: (ev) => {
         if (ev.event === 'Checkout.Success') {
           const email = ev.data?.order?.data?.attributes?.user_email;
-          setTimeout(() => { location.href = `${base}konto.html?next=biblioteka${email ? '&email=' + encodeURIComponent(email) : ''}`; }, 1500);
+          setTimeout(() => { location.href = `${base}${T.account}?next=library${email ? '&email=' + encodeURIComponent(email) : ''}`; }, 1500);
         }
       },
     });

@@ -140,7 +140,7 @@
     scrollTrigger: { trigger: '#levelup', start: 'top 60%', end: 'center 40%', scrub: 0.5 },
   })
     .to('#xpFill', { width: '100%', ease: 'none' }, 0)
-    .to(xp, { v: 3000, ease: 'none', onUpdate: () => { document.getElementById('xpNow').textContent = String(Math.round(xp.v)).replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0'); } }, 0);
+    .to(xp, { v: 3000, ease: 'none', onUpdate: () => { document.getElementById('xpNow').textContent = String(Math.round(xp.v)).replace(/\B(?=(\d{3})+(?!\d))/g, document.documentElement.lang === 'en' ? ',' : '\u00a0'); } }, 0);
 
   ScrollTrigger.create({
     trigger: '#levelup', start: 'center 40%', once: true,
