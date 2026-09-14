@@ -161,10 +161,35 @@
   const en = document.documentElement.lang === 'en';
   const tr = (html) => en ? EN.reduce((h, [a, b]) => h.split(a).join(b), html) : html;
 
+  /* Real screenshots: if img/shots/<key>.png exists on the server, it replaces
+     the HTML mockup automatically (EN pages try <key>.en.png first). Just drop
+     the PNGs into img/shots/ — no HTML changes needed. Bump SHOTS_V after
+     replacing a file so the CDN cache picks up the new version. */
+  const SHOTS_V = '1';
+  const base = location.pathname.startsWith('/en/') ? '../' : '';
+  const useReal = (el, key) => {
+    const names = en ? [`${key}.en.png`, `${key}.png`] : [`${key}.png`];
+    const tryNext = () => {
+      const n = names.shift();
+      if (!n) return;
+      const img = new Image();
+      img.onload = () => {
+        img.alt = el.getAttribute('data-alt') || `Life RPG — ${key}`;
+        img.loading = 'lazy';
+        el.classList.add('shot--real');
+        el.replaceChildren(img);
+      };
+      img.onerror = tryNext;
+      img.src = `${base}img/shots/${n}?v=${SHOTS_V}`;
+    };
+    tryNext();
+  };
+
   document.querySelectorAll('[data-shot]').forEach((el) => {
     if (el.querySelector('img')) return;
     const key = el.dataset.shot;
     if (themes[key]) el.innerHTML = tr(themes[key]);
     else if (shots[key]) el.innerHTML = tr(`<div class="nw">${shots[key]}</div>`);
+    useReal(el, key);
   });
 })();
