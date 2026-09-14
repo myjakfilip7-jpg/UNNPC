@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UNNPC — Life RPG for Notion. Life is a game. Stop playing the NPC.</title>
+  <meta name="description" content="Life RPG is a Notion system: character sheet, daily quests, 90-day seasons and a vault. One payment of $49, lifetime updates. Investor Tracker for free.">
+  <meta property="og:title" content="UNNPC — Life RPG for Notion">
+  <meta property="og:description" content="Life is a game. Stop playing the NPC. A Notion system with XP, quests and seasons.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://unnpc.com/img/og.jpg">
+  <meta property="og:url" content="https://unnpc.com/en/">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0e0f0c">
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://unnpc.com/en/">
+  <link rel="alternate" hreflang="pl" href="https://unnpc.com/">
+  <link rel="alternate" hreflang="en" href="https://unnpc.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://unnpc.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><div class="progress__bar" id="progressBar"></div></div>
+
+<header class="nav" id="nav">
+  <a class="nav__logo mono" href="#top">&gt;_ UNNPC</a>
+  <span class="nav__status label"><span class="dot"></span>NPC MODE: OFF</span>
+  <nav class="nav__links">
+    <a href="#system">System</a>
+    <a href="#modules">Modules</a>
+    <a href="#themes">Themes</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <span id="navAccount"></span>
+    <a class="nav__lang" href="/" hreflang="pl" lang="pl" title="Polski">PL</a>
+  </nav>
+  <a class="btn btn--acc btn--sm" href="#pricing">Buy — $49</a>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__grid" aria-hidden="true"></div>
+
+    <div class="hero__copy">
+      <div class="chips" aria-hidden="true">
+        <span class="chip" data-float>+50 XP</span>
+        <span class="chip" data-float>LEVEL UP</span>
+        <span class="chip" data-float>STREAK 17</span>
+      </div>
+      <h1 class="hero__title" data-split>Life is a game.<br>Stop playing <span class="acc">the NPC.</span></h1>
+      <p class="hero__lead" data-reveal>Life RPG is a Notion system that gives you a character sheet, daily quests and 90-day seasons. You earn XP for the things you should be doing anyway. The difference: now you can see it.</p>
+      <div class="hero__cta" data-reveal>
+        <a class="btn btn--acc" href="#pricing">Get Life RPG — $49</a>
+        <a class="btn btn--line" href="#tracker">Free Investor Tracker</a>
+      </div>
+      <p class="label hero__meta" data-reveal>[NUMBER] players · free Notion plan · 5-min setup · 14-day refunds</p>
+    </div>
+
+    <div class="stage" id="heroStage">
+      <div class="stage__tilt" id="heroTilt">
+        <figure class="shot shot--hero" data-shot="dashboard" id="heroShot"></figure>
+        <div class="stage__float stage__float--a" data-float>
+          <span class="mono">+40 XP</span><small>Workout 45 min</small>
+        </div>
+        <div class="stage__float stage__float--b" data-float>
+          <span class="mono">LVL 12 → 13</span><small>2,340 / 3,000 XP</small>
+        </div>
+        <div class="stage__float stage__float--c" data-float>
+          <span class="mono">BOSS</span><small>Scrolling after 10 pm · 5/7</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TICKER ============ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track" id="ticker">
+      <span>Character sheet</span><span>Daily Loop</span><span>Seasons</span><span>Vault</span><span>Skill Tree</span><span>Boss Log</span><span>NPC Meter</span><span>XP</span>
+      <span>Character sheet</span><span>Daily Loop</span><span>Seasons</span><span>Vault</span><span>Skill Tree</span><span>Boss Log</span><span>NPC Meter</span><span>XP</span>
+    </div>
+  </div>
+
+  <!-- ============ PROBLEM ============ -->
+  <section class="problem" id="system">
+    <div class="problem__item" data-reveal>
+      <span class="mono problem__num" data-count="4">0</span>
+      <p>abandoned habit apps on your phone. On average.</p>
+    </div>
+    <div class="problem__item" data-reveal>
+      <span class="mono problem__num" data-count="0">0</span>
+      <p>of them show you which area of your life is stuck.</p>
+    </div>
+    <div class="problem__item" data-reveal>
+      <span class="mono problem__num" data-count="1">0</span>
+      <p>screen in Notion where you see everything. That is Life RPG.</p>
+    </div>
+  </section>
+
+  <!-- ============ MODULES (pinned scrollytelling) ============ -->
+  <section class="modules" id="modules">
+    <div class="modules__pin" id="modulesPin">
+      <div class="modules__text">
+        <span class="label">Six modules · one screen</span>
+        <ol class="steps" id="steps">
+          <li class="step is-active" data-step="0">
+            <span class="step__idx mono">01</span>
+            <h3>Character sheet</h3>
+            <p>Level, XP and six stats: Body, Mind, Money, People, Craft, Calm. Every quest levels a specific one.</p>
+          </li>
+          <li class="step" data-step="1">
+            <span class="step__idx mono">02</span>
+            <h3>Daily Loop</h3>
+            <p>Three quests a day, habits, streak. Notion formulas do the XP math — you only tick boxes.</p>
+          </li>
+          <li class="step" data-step="2">
+            <span class="step__idx mono">03</span>
+            <h3>Seasons</h3>
+            <p>Life in 90-day seasons. One Main Quest, three Side Quests, a boss fight at the end.</p>
+          </li>
+          <li class="step" data-step="3">
+            <span class="step__idx mono">04</span>
+            <h3>Vault</h3>
+            <p>Budget, savings and your investment portfolio as the Money stat.</p>
+          </li>
+          <li class="step" data-step="4">
+            <span class="step__idx mono">05</span>
+            <h3>Skill Tree</h3>
+            <p>A skill tree with prerequisites. Unlock branches with XP.</p>
+          </li>
+          <li class="step" data-step="5">
+            <span class="step__idx mono">06</span>
+            <h3>Boss Log</h3>
+            <p>Procrastination, doomscrolling, sleep. A log of your enemies and the days you won.</p>
+          </li>
+        </ol>
+      </div>
+      <div class="modules__stage">
+        <div class="deck" id="deck">
+          <figure class="shot deck__card" data-shot="character"></figure>
+          <figure class="shot deck__card" data-shot="daily"></figure>
+          <figure class="shot deck__card" data-shot="season"></figure>
+          <figure class="shot deck__card" data-shot="vault"></figure>
+          <figure class="shot deck__card" data-shot="skills"></figure>
+          <figure class="shot deck__card" data-shot="boss"></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LEVEL UP ============ -->
+  <section class="levelup" id="levelup">
+    <div class="levelup__inner">
+      <span class="label">Visible progress</span>
+      <h2 class="levelup__title">The one with a plan doesn't win.<br>The one who <span class="acc">sees the score</span> does.</h2>
+      <div class="xp">
+        <div class="xp__head mono">
+          <span>LVL <b id="xpLevel">12</b></span>
+          <span><b id="xpNow">0</b> / 3,000 XP</span>
+        </div>
+        <div class="xp__bar"><div class="xp__fill" id="xpFill"></div></div>
+        <div class="xp__burst mono" id="xpBurst">LEVEL UP → 13</div>
+      </div>
+      <div class="meter" data-reveal>
+        <span class="label">NPC Meter · September</span>
+        <div class="meter__days" id="meterDays"></div>
+        <span class="mono meter__sum">11 / 13 days as main character</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THEMES (horizontal pinned) ============ -->
+  <section class="themes" id="themes">
+    <div class="themes__pin" id="themesPin">
+      <div class="themes__head">
+        <span class="label">Pick your world · 4 themes included</span>
+        <h2>Same system.<br>Four skins.</h2>
+      </div>
+      <div class="themes__track" id="themesTrack">
+        <figure class="theme theme--terminal"><div class="shot shot--theme" data-shot="theme-terminal"></div><figcaption class="mono">01 · Terminal</figcaption></figure>
+        <figure class="theme theme--cyber"><div class="shot shot--theme" data-shot="theme-cyber"></div><figcaption class="mono">02 · Cyber</figcaption></figure>
+        <figure class="theme theme--pixel"><div class="shot shot--theme" data-shot="theme-pixel"></div><figcaption class="mono">03 · Pixel</figcaption></figure>
+        <figure class="theme theme--clean"><div class="shot shot--theme" data-shot="theme-clean"></div><figcaption class="mono">04 · Clean</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FREE TRACKER ============ -->
+  <section class="tracker" id="tracker">
+    <div class="tracker__copy" data-reveal>
+      <span class="label">Free · your way in</span>
+      <h2>Investor Tracker.<br>Your portfolio in Notion, $0.</h2>
+      <p>Stocks, ETFs, bonds and crypto split by account. The same “Vault” module that powers the Money stat in Life RPG. Drop your email — the duplicate link arrives right away.</p>
+      <form class="lead" action="#" method="post" onsubmit="return false;">
+        <label class="sr-only" for="leadEmail">Email</label>
+        <input id="leadEmail" type="email" name="email" placeholder="you@email.com" required>
+        <button class="btn btn--acc" type="submit">Send me the tracker</button>
+      </form>
+      <p class="label">Zero spam. One email with the link, then the 30-day “First Season” if you want it.</p>
+    </div>
+    <div class="tracker__stage" data-reveal>
+      <figure class="shot shot--tracker" data-shot="tracker"></figure>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="pricing" id="pricing">
+    <div class="pricing__head" data-reveal>
+      <span class="label">Pricing</span>
+      <h2>One payment. Lifetime.</h2>
+    </div>
+    <div class="plans">
+      <article class="plan" data-reveal data-tilt>
+        <span class="label">Start</span>
+        <h3>Investor Tracker</h3>
+        <div class="plan__price mono">$0</div>
+        <ul>
+          <li>Investment portfolio in Notion</li>
+          <li>Stocks, ETFs, bonds, crypto</li>
+          <li>For your email</li>
+        </ul>
+        <a class="btn btn--line" href="#tracker">Get it</a>
+      </article>
+      <article class="plan plan--main" data-reveal data-tilt>
+        <div class="plan__top"><span class="label acc">Full system</span><span class="chip">-20% LAUNCH</span></div>
+        <h3>Life RPG</h3>
+        <div class="plan__price mono">$49 <s>$59</s></div>
+        <ul>
+          <li>6 modules + Investor Tracker</li>
+          <li>4 themes: Terminal, Cyber, Pixel, Clean</li>
+          <li>Lifetime updates</li>
+          <li>30-day “First Season” by email</li>
+          <li>Mobile dashboard view</li>
+          <li>Players’ Discord</li>
+        </ul>
+        <a class="btn btn--acc" href="#pricing" data-checkout="life-rpg">Get Life RPG</a>
+        <span class="label plan__note">14-day refunds · card / PayPal / Apple Pay · billed in your currency</span>
+      </article>
+      <article class="plan plan--soon" data-reveal data-tilt>
+        <span class="label">Soon</span>
+        <h3>Add-ons</h3>
+        <div class="plan__price mono muted">—</div>
+        <ul>
+          <li>Theme packs</li>
+          <li>Modules: student, freelancer</li>
+          <li>For Life RPG owners</li>
+        </ul>
+        <a class="btn btn--line" href="#tracker">Notify me</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ PROOF ============ -->
+  <section class="proof">
+    <span class="label" data-reveal>What players say</span>
+    <div class="proof__grid">
+      <blockquote class="ph" data-reveal>[REVIEW — to be added after beta]</blockquote>
+      <blockquote class="ph" data-reveal>[REVIEW — to be added after beta]</blockquote>
+      <blockquote class="ph" data-reveal>[REVIEW — to be added after beta]</blockquote>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq" id="faq">
+    <div class="faq__head" data-reveal>
+      <span class="label">FAQ</span>
+      <h2>Questions before you buy</h2>
+    </div>
+    <div class="faq__list">
+      <details data-reveal><summary>Do I need a paid Notion plan?<span class="mono">+</span></summary><p>No. Life RPG runs on the free Notion plan. All XP and stats are computed by formulas, not automations.</p></details>
+      <details data-reveal><summary>How long does setup take?<span class="mono">+</span></summary><p>About five minutes: duplicate the template, run the five-step “New Game” wizard and add your first three quests.</p></details>
+      <details data-reveal><summary>How is this different from LiFE RPG (HeyAlbert)?<span class="mono">+</span></summary><p>Six modules instead of fifteen, everything on one screen, no shops or currencies. Life RPG is about life stats, not fantasy.</p></details>
+      <details data-reveal><summary>Does it work on my phone?<span class="mono">+</span></summary><p>Yes, in the Notion app. The dashboard has a separate mobile view with today’s quests and the XP bar.</p></details>
+      <details data-reveal><summary>What about refunds?<span class="mono">+</span></summary><p>14 days, no questions asked. Email us, we refund. Details: <a href="refunds.html">refunds</a>.</p></details>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final" data-reveal>
+    <div class="final__inner">
+      <div>
+        <h2>New game. Same character.</h2>
+        <p>Five-minute setup. First quest tonight.</p>
+      </div>
+      <a class="btn btn--ink" href="#pricing" data-checkout="life-rpg">Get Life RPG — $49</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer label">
+  <span>© 2026 UNNPC · unnpc.com</span>
+  <nav><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="refunds.html">Refunds</a><a href="mailto:[EMAIL_WSPARCIA]">Contact</a><a href="https://www.tiktok.com/@unnpc" target="_blank" rel="noopener">TikTok</a></nav>
+</footer>
+
+<script src="../js/vendor/gsap.min.js"></script>
+<script src="../js/vendor/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" defer></script>
+<script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
+<script src="../js/config.js"></script>
+<script src="../js/shots.js"></script>
+<script src="../js/main.js"></script>
+<script>window.addEventListener('load', () => { const s = document.createElement('script'); s.src = '../js/account.js'; document.body.appendChild(s); });</script>
+</body>
+</html>
