@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My products · UNNPC</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0e0f0c">
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/account.css">
+</head>
+<body>
+<header class="nav is-scrolled" id="nav">
+  <a class="nav__logo mono" href="/en/">&gt;_ UNNPC</a>
+  <nav class="nav__links"><a href="/en/#modules">Modules</a><a href="/en/#pricing">Pricing</a><span id="navAccount"></span></nav>
+  <button class="btn btn--line btn--sm" id="logoutBtn" type="button">Sign out</button>
+</header>
+
+<main class="acct acct--wide">
+  <div class="acct__head">
+    <span class="label">Library</span>
+    <h1>My <span class="acc">products</span></h1>
+    <p class="mono acct__who" id="who"></p>
+  </div>
+
+  <div class="lib" id="lib">
+    <div class="lib__empty ph" id="loading">Loading…</div>
+  </div>
+
+  <section class="lib__upsell" id="upsell" hidden>
+    <div>
+      <h2>Missing Life RPG?</h2>
+      <p>The full system: 6 modules, 4 themes, lifetime updates.</p>
+    </div>
+    <a class="btn btn--acc" href="#" data-checkout="life-rpg">Get Life RPG — $49</a>
+  </section>
+</main>
+
+<footer class="footer label">
+  <span>© 2026 UNNPC · unnpc.com</span>
+  <nav><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="refunds.html">Refunds</a><a href="mailto:[EMAIL_WSPARCIA]">Help</a></nav>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
+<script src="../js/config.js"></script>
+<script src="../js/account.js"></script>
+<script>
+(async function () {
+  const sb = window.UNNPC.sb;
+  const lib = document.getElementById('lib');
+  if (!sb) { lib.innerHTML = '<div class="lib__empty ph">The library is not connected yet (missing Supabase config).</div>'; return; }
+
+  const { data } = await sb.auth.getSession();
+  if (!data.session) { location.replace('account.html'); return; }
+  const email = data.session.user.email;
+  document.getElementById('who').textContent = email;
+  document.getElementById('logoutBtn').addEventListener('click', async () => { await sb.auth.signOut(); location.href = '/en/'; });
+
+  const { data: items, error } = await sb.rpc('my_library');
+  if (error) { lib.innerHTML = `<div class="lib__empty ph">Error: ${error.message}</div>`; return; }
+
+  if (!items || !items.length) {
+    lib.innerHTML = `<div class="lib__empty">
+      <h3>Nothing here yet.</h3>
+      <p>We can’t see any purchases for <b>${email}</b>. If you paid with a different email, sign in with that one or drop us a line.</p>
+      <a class="btn btn--line" href="/en/#tracker">Grab the free Investor Tracker</a></div>`;
+    document.getElementById('upsell').hidden = false;
+    return;
+  }
+
+  lib.innerHTML = items.map((p) => `
+    <article class="lib__card">
+      <div class="lib__cover" style="${p.cover_url ? `background-image:url(${p.cover_url})` : ''}"><span class="mono">${p.name}</span></div>
+      <div class="lib__body">
+        <span class="label">Purchased ${new Date(p.purchased_at).toLocaleDateString('en-US')}</span>
+        <h3>${p.name}</h3>
+        <p>${p.description || ''}</p>
+        <a class="btn btn--acc" href="${p.notion_url}" target="_blank" rel="noopener">Open in Notion → Duplicate</a>
+        <span class="label">In Notion, click “Duplicate” in the top-right corner. The link never expires — updates show up here.</span>
+      </div>
+    </article>`).join('');
+
+  if (!items.some((p) => p.product_id === 'life-rpg')) document.getElementById('upsell').hidden = false;
+})();
+</script>
+</body>
+</html>
