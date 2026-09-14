@@ -32,6 +32,7 @@
     <a href="#motywy">Motywy</a>
     <a href="#cennik">Cennik</a>
     <a href="#faq">FAQ</a>
+    <span id="navAccount"></span>
   </nav>
   <a class="btn btn--acc btn--sm" href="#cennik">Kup — 199 zł</a>
 </header>
@@ -234,7 +235,7 @@
           <li>Wersja mobilna pulpitu</li>
           <li>Discord graczy</li>
         </ul>
-        <a class="btn btn--acc" href="[LINK_CHECKOUT]" data-checkout>Kup Life RPG</a>
+        <a class="btn btn--acc" href="#cennik" data-checkout="life-rpg">Kup Life RPG</a>
         <span class="label plan__note">14 dni na zwrot · BLIK / karta / PayPal</span>
       </article>
       <article class="plan plan--soon" data-reveal data-tilt>
@@ -283,7 +284,7 @@
         <h2>Nowa gra. Ta sama postać.</h2>
         <p>Setup w 5 minut. Pierwszy quest dziś wieczorem.</p>
       </div>
-      <a class="btn btn--ink" href="[LINK_CHECKOUT]" data-checkout>Kup Life RPG — 199 zł</a>
+      <a class="btn btn--ink" href="#cennik" data-checkout="life-rpg">Kup Life RPG — 199 zł</a>
     </div>
   </section>
 
@@ -296,7 +297,11 @@
 
 <script src="js/vendor/gsap.min.js"></script>
 <script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" defer></script>
+<script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
+<script src="js/config.js"></script>
 <script src="js/shots.js"></script>
 <script src="js/main.js"></script>
+<script>window.addEventListener('load', () => { const s = document.createElement('script'); s.src = 'js/account.js'; document.body.appendChild(s); });</script>
 </body>
 </html>
