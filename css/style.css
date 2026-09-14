@@ -141,7 +141,8 @@ img { max-width: 100%; display: block; }
   aspect-ratio: 16 / 10;
   width: 100%;
 }
-.shot img { width: 100%; height: 100%; object-fit: cover; }
+.shot img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
+.shot--real { background: #191919; }
 .nw { display: grid; grid-template-columns: 180px 1fr; height: 100%; font-size: 12px; }
 .nw__side { background: #f7f7f5; border-right: 1px solid #ededeb; padding: 14px 10px; display: flex; flex-direction: column; gap: 6px; color: #787774; }
 .nw__side b { color: #37352f; font-weight: 600; display: block; margin-bottom: 8px; font-size: 12px; }
